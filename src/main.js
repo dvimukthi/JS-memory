@@ -29,5 +29,13 @@ const getData = () => [
 const randomize = () => {
   const cardData = getData();
   cardData.sort(() => Math.random() - 0.5);
+  return cardData;
+};
+
+// card generator
+const cardGenerator = () => {
+  const cardData = randomize();
   console.log(cardData);
 };
+
+cardGenerator();
