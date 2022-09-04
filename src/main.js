@@ -24,3 +24,10 @@ const getData = () => [
   { imgSrc: "./Assets/7.png", name: "seven" },
   { imgSrc: "./Assets/8.png", name: "eight" },
 ];
+
+// randomize
+const randomize = () => {
+  const cardData = getData();
+  cardData.sort(() => Math.random() - 0.5);
+  console.log(cardData);
+};
