@@ -19,11 +19,14 @@ section {
   grid-template-columns: repeat(4, 8rem);
   grid-template-rows: repeat(4, 8rem);
   grid-gap: 2rem;
+  perspective: 800px;
 }
 
 .card {
   position: relative;
   transform-style: preserve-3d;
+  transition: all 2s ease;
+  transform: rotateY(0deg);
 }
 
 .face,
@@ -37,5 +40,3 @@ section {
   background: white;
   backface-visibility: hidden;
 }
-
-
