@@ -47,6 +47,7 @@ const cardGenerator = () => {
 
     // Attach the info to the cards
     face.src = item.imgSrc;
+    card.setAttribute("name", item.name);
 
     // Attach the card to the section
     section.appendChild(card);
@@ -64,7 +65,17 @@ const cardGenerator = () => {
 const checkCards = (e) => {
   console.log(e);
   const clickedCard = e.target;
-  console.log(clickedCard);
+  const flippedCards = document.querySelectorAll(".flipped");
+  clickedCard.classList.add("flipped");
+  // function
+  if (flippedCards.length === 2) {
+    if (
+      flippedCards[0].getAttribute("name") ===
+      flippedCards[1].getAttribute("name")
+    ) {
+      console.log("match");
+    }
+  }
 };
 
 cardGenerator();
