@@ -55,8 +55,16 @@ const cardGenerator = () => {
 
     card.addEventListener("click", (e) => {
       card.classList.toggle("toggleCard");
+      checkCards(e);
     });
   });
+};
+
+// check cards
+const checkCards = (e) => {
+  console.log(e);
+  const clickedCard = e.target;
+  console.log(clickedCard);
 };
 
 cardGenerator();
