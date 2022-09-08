@@ -1,2 +1,3 @@
-# memory-game
+# javascript memory game
+
 A JavaScript project
