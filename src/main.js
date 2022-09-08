@@ -25,7 +25,7 @@ const getData = () => [
   { imgSrc: "./Assets/8.png", name: "eight" },
 ];
 
-// randomize
+// randomize cards
 const randomize = () => {
   const cardData = getData();
   cardData.sort(() => Math.random() - 0.5);
@@ -65,8 +65,10 @@ const cardGenerator = () => {
 const checkCards = (e) => {
   console.log(e);
   const clickedCard = e.target;
-  const flippedCards = document.querySelectorAll(".flipped");
   clickedCard.classList.add("flipped");
+  const flippedCards = document.querySelectorAll(".flipped");
+  console.log(flippedCards);
+
   // function
   if (flippedCards.length === 2) {
     if (
@@ -74,6 +76,8 @@ const checkCards = (e) => {
       flippedCards[1].getAttribute("name")
     ) {
       console.log("match");
+    } else {
+      console.log("wrong");
     }
   }
 };
