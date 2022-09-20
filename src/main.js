@@ -1,6 +1,6 @@
 const section = document.querySelector("section");
 const PlayerLivesCount = document.querySelector("span");
-const PlayerLives = 6;
+let PlayerLives = 6;
 
 // link text
 PlayerLivesCount.textContent = PlayerLives;
@@ -86,8 +86,23 @@ const checkCards = (e) => {
         card.classList.remove("flipped");
         setTimeout(() => card.classList.remove("toggleCard"), 1000);
       });
+      PlayerLives--;
+      PlayerLivesCount.textContent = PlayerLives;
+      if (PlayerLives === 0) {
+        restart();
+      }
     }
   }
+};
+
+// reset function
+const restart = () => {
+  let cardDat = randomize();
+  let cardData = document.querySelectorAll(".face");
+  let cards = document.querySelectorAll(".card");
+  cardData.forEach((item, index) => {
+    cards[index].classList.remove("toggleCard");
+  });
 };
 
 cardGenerator();
