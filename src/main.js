@@ -101,7 +101,7 @@ const checkCards = (e) => {
 };
 
 // reset function
-const restart = () => {
+const restart = (text) => {
   let cardData = randomize();
   let faces = document.querySelectorAll(".face");
   let cards = document.querySelectorAll(".card");
